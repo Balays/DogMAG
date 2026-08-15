@@ -1,0 +1,71 @@
+source_rank	source_taxon	target_rank	target_taxon	color_group_phylum	count	fraction	polygon_id
+phylum	Actinomycetota	class	Coriobacteriia	Actinomycetota	65	0.08207070707070707	1
+phylum	Actinomycetota	class	Other Class	Actinomycetota	9	0.011363636363636364	2
+phylum	Bacillota	class	Bacilli	Bacillota	18	0.022727272727272728	3
+phylum	Bacillota	class	Clostridia	Bacillota	394	0.49747474747474746	4
+phylum	Bacillota	class	Negativicutes	Bacillota	29	0.036616161616161616	5
+phylum	Bacillota	class	Other Class	Bacillota	8	0.010101010101010102	6
+phylum	Bacillota_I	class	Bacilli_A	Bacillota_I	50	0.06313131313131314	7
+phylum	Bacteroidota	class	Bacteroidia	Bacteroidota	120	0.15151515151515152	8
+phylum	Campylobacterota	class	Other Class	Campylobacterota	14	0.017676767676767676	9
+phylum	Fusobacteriota	class	Fusobacteriia	Fusobacteriota	43	0.054292929292929296	10
+phylum	Pseudomonadota	class	Gammaproteobacteria	Pseudomonadota	42	0.05303030303030303	11
+class	Coriobacteriia	order	Coriobacteriales	Actinomycetota	65	0.08207070707070707	12
+class	Other Class	order	Other Order	Actinomycetota	9	0.011363636363636364	13
+class	Bacilli	order	Other Order	Bacillota	18	0.022727272727272728	14
+class	Clostridia	order	Lachnospirales	Bacillota	300	0.3787878787878788	15
+class	Clostridia	order	Oscillospirales	Bacillota	29	0.036616161616161616	16
+class	Clostridia	order	Other Order	Bacillota	19	0.023989898989898988	17
+class	Clostridia	order	Peptostreptococcales	Bacillota	46	0.05808080808080808	18
+class	Negativicutes	order	Other Order	Bacillota	29	0.036616161616161616	19
+class	Other Class	order	Other Order	Bacillota	8	0.010101010101010102	20
+class	Bacilli_A	order	Erysipelotrichales	Bacillota_I	38	0.047979797979797977	21
+class	Bacilli_A	order	Other Order	Bacillota_I	12	0.015151515151515152	22
+class	Bacteroidia	order	Bacteroidales	Bacteroidota	120	0.15151515151515152	23
+class	Other Class	order	Other Order	Campylobacterota	14	0.017676767676767676	24
+class	Fusobacteriia	order	Fusobacteriales	Fusobacteriota	43	0.054292929292929296	25
+class	Gammaproteobacteria	order	Burkholderiales	Pseudomonadota	20	0.025252525252525252	26
+class	Gammaproteobacteria	order	Enterobacterales	Pseudomonadota	22	0.027777777777777776	27
+order	Coriobacteriales	family	Coriobacteriaceae	Actinomycetota	62	0.07828282828282829	28
+order	Coriobacteriales	family	Other Family	Actinomycetota	3	0.003787878787878788	29
+order	Other Order	family	Other Family	Actinomycetota	9	0.011363636363636364	30
+order	Lachnospirales	family	Lachnospiraceae	Bacillota	298	0.37626262626262624	31
+order	Lachnospirales	family	Other Family	Bacillota	2	0.0025252525252525255	32
+order	Oscillospirales	family	Other Family	Bacillota	5	0.006313131313131313	33
+order	Oscillospirales	family	Ruminococcaceae	Bacillota	24	0.030303030303030304	34
+order	Other Order	family	Other Family	Bacillota	74	0.09343434343434344	35
+order	Peptostreptococcales	family	Peptostreptococcaceae	Bacillota	46	0.05808080808080808	36
+order	Erysipelotrichales	family	Erysipelotrichaceae	Bacillota_I	27	0.03409090909090909	37
+order	Erysipelotrichales	family	Other Family	Bacillota_I	11	0.013888888888888888	38
+order	Other Order	family	Other Family	Bacillota_I	12	0.015151515151515152	39
+order	Bacteroidales	family	Bacteroidaceae	Bacteroidota	119	0.15025252525252525	40
+order	Bacteroidales	family	Other Family	Bacteroidota	1	0.0012626262626262627	41
+order	Other Order	family	Other Family	Campylobacterota	14	0.017676767676767676	42
+order	Fusobacteriales	family	Fusobacteriaceae	Fusobacteriota	43	0.054292929292929296	43
+order	Burkholderiales	family	Burkholderiaceae_F	Pseudomonadota	20	0.025252525252525252	44
+order	Enterobacterales	family	Enterobacteriaceae	Pseudomonadota	20	0.025252525252525252	45
+order	Enterobacterales	family	Other Family	Pseudomonadota	2	0.0025252525252525255	46
+family	Coriobacteriaceae	genus	Collinsella	Actinomycetota	62	0.07828282828282829	47
+family	Other Family	genus	Other Genus	Actinomycetota	12	0.015151515151515152	48
+family	Lachnospiraceae	genus	Blautia	Bacillota	95	0.11994949494949494	49
+family	Lachnospiraceae	genus	Blautia_A	Bacillota	64	0.08080808080808081	50
+family	Lachnospiraceae	genus	Faecalimonas	Bacillota	41	0.05176767676767677	51
+family	Lachnospiraceae	genus	Mediterraneibacter	Bacillota	37	0.04671717171717172	52
+family	Lachnospiraceae	genus	Other Genus	Bacillota	61	0.07702020202020202	53
+family	Other Family	genus	Other Genus	Bacillota	81	0.10227272727272728	54
+family	Peptostreptococcaceae	genus	Other Genus	Bacillota	6	0.007575757575757576	55
+family	Peptostreptococcaceae	genus	Peptacetobacter	Bacillota	40	0.050505050505050504	56
+family	Ruminococcaceae	genus	Other Genus	Bacillota	24	0.030303030303030304	57
+family	Erysipelotrichaceae	genus	Other Genus	Bacillota_I	27	0.03409090909090909	58
+family	Other Family	genus	Other Genus	Bacillota_I	23	0.02904040404040404	59
+family	Bacteroidaceae	genus	Bacteroides	Bacteroidota	28	0.03535353535353535	60
+family	Bacteroidaceae	genus	Other Genus	Bacteroidota	22	0.027777777777777776	61
+family	Bacteroidaceae	genus	Phocaeicola	Bacteroidota	49	0.06186868686868687	62
+family	Bacteroidaceae	genus	Prevotella	Bacteroidota	20	0.025252525252525252	63
+family	Other Family	genus	Other Genus	Bacteroidota	1	0.0012626262626262627	64
+family	Other Family	genus	Other Genus	Campylobacterota	14	0.017676767676767676	65
+family	Fusobacteriaceae	genus	Fusobacterium_A	Fusobacteriota	26	0.03282828282828283	66
+family	Fusobacteriaceae	genus	Other Genus	Fusobacteriota	17	0.021464646464646464	67
+family	Burkholderiaceae_F	genus	Other Genus	Pseudomonadota	20	0.025252525252525252	68
+family	Enterobacteriaceae	genus	Other Genus	Pseudomonadota	20	0.025252525252525252	69
+family	Other Family	genus	Other Genus	Pseudomonadota	2	0.0025252525252525255	70

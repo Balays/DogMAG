@@ -1,0 +1,23 @@
+# Generated/local files
+__pycache__/
+*.py[cod]
+.Rhistory
+.RData
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+
+# Sequence and alignment data belong in ENA/the article data record
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.sam
+*.cram
+*.bt2
+*.bt2l
+*.mmi
+*.dmnd

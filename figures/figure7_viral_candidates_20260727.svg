@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="470" viewBox="0 0 1100 470">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#5f7f76"/></marker></defs>
+<rect width="100%" height="100%" fill="#fbfaf5"/>
+<text x="248" y="98" text-anchor="end" font-size="13" fill="#243b36">geNomad unbinned viral predictions</text>
+<rect x="260" y="78" width="740.0" height="28" rx="7" fill="#557aa3"/>
+<text x="1008.0" y="98" font-size="13" font-weight="700" fill="#17352f">18,150</text>
+<text x="248" y="144" text-anchor="end" font-size="13" fill="#243b36">geNomad binned/prophage predictions</text>
+<rect x="260" y="124" width="159.7" height="28" rx="7" fill="#c78b43"/>
+<text x="427.7" y="144" font-size="13" font-weight="700" fill="#17352f">3,918</text>
+<text x="248" y="190" text-anchor="end" font-size="13" fill="#243b36">Final unbinned CHM, contam &lt;=10%</text>
+<rect x="260" y="170" width="94.0" height="28" rx="7" fill="#5c8f84"/>
+<text x="362.0" y="190" font-size="13" font-weight="700" fill="#17352f">2,306</text>
+<text x="248" y="236" text-anchor="end" font-size="13" fill="#243b36">Final binned/prophage CHM, contam &lt;=10%</text>
+<rect x="260" y="216" width="43.5" height="28" rx="7" fill="#83b36e"/>
+<text x="311.5" y="236" font-size="13" font-weight="700" fill="#17352f">1,068</text>
+<text x="248" y="282" text-anchor="end" font-size="13" fill="#243b36">Final filtered viral/proviral rows</text>
+<rect x="260" y="262" width="137.6" height="28" rx="7" fill="#9a6cae"/>
+<text x="405.6" y="282" font-size="13" font-weight="700" fill="#17352f">3,374</text>
+<text x="248" y="328" text-anchor="end" font-size="13" fill="#243b36">Unique source-contig MD5s</text>
+<rect x="260" y="308" width="133.8" height="28" rx="7" fill="#b86b51"/>
+<text x="401.8" y="328" font-size="13" font-weight="700" fill="#17352f">3,282</text>
+</svg>

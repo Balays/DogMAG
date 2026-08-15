@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use DogMAG, please cite the accompanying Scientific Data article."
+title: "DogMAG: a reusable canine gut metagenome resource"
+type: dataset
+authors:
+  - family-names: Kakuk
+    given-names: Balazs
+repository-code: "https://github.com/Balays/DogMAG"
+license: MIT

@@ -1,0 +1,9 @@
+stage	count	removed_from_previous_stage	interpretation
+Polished/reassembled candidate versions scored	30556		All available BASALT polished and reassembled candidate versions considered for candidate re-selection.
+BASALT selected bin/version records	11276		One BASALT-selected version per original bin group before explicit external catalogue re-selection.
+Medium-quality-or-better reselected MAG candidates	3418	7858	Completeness >=50% and contamination <=10%; one best eligible candidate per original bin group.
+High-completeness/low-contamination candidates	503		Subset with completeness >=90% and contamination <=5%; rRNA/tRNA criteria were not assessed here.
+Medium-only candidates	2915		Medium-quality-or-better candidates excluding the high-completeness/low-contamination subset.
+dRep-retained candidates after internal filtering	3222	196	dRep internal filtering retained 94.27% of the reselected pool before representative selection.
+99% ANI strain-like representatives	792	2430	External dRep representative genomes at 99% ANI; use for strain-like catalogue comparison.
+95% ANI species/SGB-like representatives	135	3087	External dRep representative genomes at 95% ANI; species/SGB-like, not official SGB assignments.

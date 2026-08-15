@@ -1,0 +1,4 @@
+branch	genomad_viral_predictions	checkv_complete_high_medium_contam_le_10_rows	unique_source_contig_md5	Complete	High-quality	Medium-quality	median_length_bp	median_checkv_completeness	median_checkv_contamination	interpretation
+unbinned/free-virus	18150	2306	2261	87	925	1294	38572.0	84.53999999999999	0.0	Candidate viral/proviral sequences; not dereplicated vOTUs.
+binned/prophage-context	3918	1068	1021	7	527	534	40685.5	89.925	0.0	Candidate viral/proviral sequences; not dereplicated vOTUs.
+combined filtered viral/proviral candidates	22068	3374	3282	94	1452	1828	39364.5	87.13499999999999	0.0	Candidate viral/proviral sequences; not dereplicated vOTUs.

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="330" viewBox="0 0 980 330">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#5f7f76"/></marker></defs>
+<rect width="100%" height="100%" fill="#fbfaf5"/>
+<text x="248" y="98" text-anchor="end" font-size="13" fill="#243b36">Flye LR-only assemblies</text>
+<rect x="260" y="78" width="67.1" height="28" rx="7" fill="#5c8f84"/>
+<text x="335.1" y="98" font-size="13" font-weight="700" fill="#17352f">30</text>
+<text x="248" y="144" text-anchor="end" font-size="13" fill="#243b36">OPERA-MS hybrid assemblies</text>
+<rect x="260" y="124" width="24.6" height="28" rx="7" fill="#c78b43"/>
+<text x="292.6" y="144" font-size="13" font-weight="700" fill="#17352f">11</text>
+<text x="248" y="190" text-anchor="end" font-size="13" fill="#243b36">Final BASALT assemblies</text>
+<rect x="260" y="170" width="91.8" height="28" rx="7" fill="#557aa3"/>
+<text x="359.8" y="190" font-size="13" font-weight="700" fill="#17352f">41</text>
+<text x="248" y="236" text-anchor="end" font-size="13" fill="#243b36">FASTQ rows in read manifest</text>
+<rect x="260" y="216" width="620.0" height="28" rx="7" fill="#9a6cae"/>
+<text x="888.0" y="236" font-size="13" font-weight="700" fill="#17352f">277</text>
+</svg>
