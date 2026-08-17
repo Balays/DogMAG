@@ -199,8 +199,11 @@ the scripts required to reproduce the reported processing and summaries.
 - 22,068 viral/proviral candidate rows before final quality filtering.
 
 The sequence files themselves are not stored in Git. Raw reads, assemblies,
-MAG FASTAs, and deposited genome records are available through the ENA projects
-and article data record described in the manuscript and `accessions/`.
+and MAG FASTAs are distributed through the ENA projects and article data record
+described in the manuscript and `accessions/`. All 135 representative MAG
+BioSamples are registered in ENA; 122 multi-contig MAG assemblies have accepted
+assembly accessions, while 13 single-contig records remain pending the separate
+ENA submission route. Supplementary Table 9 is the authoritative status table.
 
 ## Repository map
 
@@ -279,7 +282,11 @@ are intentionally excluded.
 def write_checksums(target: Path) -> None:
     checksum_path = target / "checksums" / "SHA256SUMS.tsv"
     rows = []
-    for path in sorted(p for p in target.rglob("*") if p.is_file() and p != checksum_path):
+    for path in sorted(
+        p
+        for p in target.rglob("*")
+        if p.is_file() and p != checksum_path and ".git" not in p.relative_to(target).parts
+    ):
         rows.append((sha256(path), path.relative_to(target).as_posix(), path.stat().st_size))
     checksum_path.parent.mkdir(parents=True, exist_ok=True)
     with checksum_path.open("w", encoding="utf-8", newline="") as handle:
@@ -290,7 +297,11 @@ def write_checksums(target: Path) -> None:
 
 def audit(target: Path) -> list[str]:
     errors: list[str] = []
-    files = [p for p in target.rglob("*") if p.is_file()]
+    files = [
+        p
+        for p in target.rglob("*")
+        if p.is_file() and ".git" not in p.relative_to(target).parts
+    ]
     if len(list((target / "figures").glob("*.svg"))) != 7:
         errors.append("Expected exactly 7 SVG figures")
     if len(list((target / "supplementary_tables").glob("supplementary_table_*.tsv"))) != 9:
@@ -418,7 +429,7 @@ license: MIT
     errors = audit(target)
     audit_lines = [
         "DogMAG public repository audit",
-        f"files\t{sum(1 for p in target.rglob('*') if p.is_file())}",
+        f"files\t{sum(1 for p in target.rglob('*') if p.is_file() and '.git' not in p.relative_to(target).parts)}",
         f"svg_figures\t{len(list((target / 'figures').glob('*.svg')))}",
         f"supplementary_tables\t{len(list((target / 'supplementary_tables').glob('supplementary_table_*.tsv')))}",
         f"workflow_scripts\t{len(copied_scripts)}",

@@ -19,8 +19,11 @@ the scripts required to reproduce the reported processing and summaries.
 - 22,068 viral/proviral candidate rows before final quality filtering.
 
 The sequence files themselves are not stored in Git. Raw reads, assemblies,
-MAG FASTAs, and deposited genome records are available through the ENA projects
-and article data record described in the manuscript and `accessions/`.
+and MAG FASTAs are distributed through the ENA projects and article data record
+described in the manuscript and `accessions/`. All 135 representative MAG
+BioSamples are registered in ENA; 122 multi-contig MAG assemblies have accepted
+assembly accessions, while 13 single-contig records remain pending the separate
+ENA submission route. Supplementary Table 9 is the authoritative status table.
 
 ## Repository map
 
