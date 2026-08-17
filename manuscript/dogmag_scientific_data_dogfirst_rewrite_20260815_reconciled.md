@@ -1,14 +1,14 @@
-# **Dog-wise**** canine gut metagenome assemblies with reconstructed bacterial genomes and viral candidates**
+# Dog-wise canine gut metagenome assemblies with reconstructed bacterial genomes and viral candidates
 
-Balázs Kakuk*1,2#*, Natheer Jameel Yaseen*1,2#*, Ákos Dörmő*1,2*, Tamás Járay*1,2*, Zsolt Boldogkői*1,2*, and Dóra Tombácz*1,2****
+Balázs Kakuk^1,2,#^, Natheer Jameel Yaseen^1,2,#^, Ákos Dörmő^1,2^, Tamás Járay^1,2^, Zsolt Boldogkői^1,2^, and Dóra Tombácz^1,2^*
 
-*1*MTA-SZTE Lendület GeMiNI Research Group, University of Szeged, Somogyi st. 4., 6720 Szeged, Hungary.
+^1^MTA-SZTE Lendület GeMiNI Research Group, University of Szeged, Somogyi st. 4., 6720 Szeged, Hungary.
 
-*2*Department of Medical Biology, Albert Szent-Gyorgyi Medical School, University of Szeged, Somogyi st. 4., 6720 Szeged, Hungary.
+^2^Department of Medical Biology, Albert Szent-Gyorgyi Medical School, University of Szeged, Somogyi st. 4., 6720 Szeged, Hungary.
 
-*Corresponding author: Dóra Tombácz ().
+*Corresponding author: Dóra Tombácz (tombacz.dora@med.u-szeged.hu).*
 
-#Equal contribution
+\# These authors contributed equally.
 
 ## Abstract
 
@@ -20,7 +20,7 @@ The domestic dog (*Canis lupus familiaris*) is an important comparative model fo
 
 Amplicon surveys, short-read shotgun metagenomes and genome-resolved canine or companion-animal resources have expanded knowledge of the dog gut microbiome [4-8]. DogMAG is designed to complement these resources rather than to stage a like-for-like catalogue-size comparison, because sample scope, deposited data layers, dereplication thresholds, placement workflows and reporting units differ among studies. Its main contribution is direct reusability: the resource exposes dog-wise input assemblies, privacy-preserving read-to-assembly provenance, summary-level BASALT provenance, metadata and FASTA files for the explicitly reselected quality-passing candidates, externally dereplicated genome FASTA layers, GTDB-Tk taxonomy, viral/prophage candidate context and workflow code. This structure allows users to remap reads, review selection criteria, rerun dereplication at alternative thresholds, update taxonomy and reannotate viral candidates as reference databases improve. DogMAG therefore uses canonical dog identity as the primary assembly unit. Sequencing project, date, diet, extraction batch, kennel, library preparation and run origin remain part of the metadata, but they are not the main axis of the assembly and binning workflow. This structure matches the biological unit used for genome recovery: reads from the same dog are assembled together where appropriate, and the resulting dog-wise assemblies are integrated in one BASALT run.
 
-The dog-first assembly layer contains 41 final BASALT input assemblies: 30 Flye long-read-only dog-wise assemblies for dogs with long-read data and no retained short-read support for final hybrid assembly, and 11 OPERA-MS hybrid assemblies for dogs with both long-read and short-read data retained for the final BASALT run. These assemblies are linked to 277 FASTQ records in metadata/internal_fastq_to_final_basalt_assemblies.tsv, including 87 long-read FASTQ rows and 190 short-read FASTQ rows. A public-facing privacy-preserving read-to-assembly table is provided as Supplementary Table 4. The dog-first assembly design and final assembly-class composition are summarised in Figs. 1 and 2.
+The dog-first assembly layer contains 41 final BASALT input assemblies: 30 Flye long-read-only dog-wise assemblies for dogs with long-read data and no retained short-read support for final hybrid assembly, and 11 OPERA-MS hybrid assemblies for dogs with both long-read and short-read data retained for the final BASALT run. These assemblies are linked to 277 FASTQ records, including 87 long-read FASTQ rows and 190 short-read FASTQ rows, in the public privacy-preserving read-to-assembly manifest provided as Supplementary Table 4. The dog-first assembly design and final assembly-class composition are summarised in Figs. 1 and 2.
 
 The dog-first BASALT workflow used manifest-driven assembly staging, read-to-assembly provenance tracking and CheckM2-backed quality estimation. BASALT was retained as the bin-comparison and BestBinset selection engine, while the dog-wise assembly design ensured that all retained final assemblies were processed in a single integrated run. The completed BASALT and candidate re-selection workflow produced 11,276 selected bin/version records from 30,556 polished or reassembled candidate versions. Applying explicit DogMAG quality thresholds and candidate re-selection retained 3,418 medium-quality-or-better MAG candidates for external ANI dereplication, including 503 high-completeness/low-contamination candidates and 2,915 medium-only candidates. External dRep dereplication of the reselected MAG candidate pool produced 792 99% ANI strain-like representatives and 135 95% ANI species/SGB-like representatives; the latter are not official SGB assignments. The BASALT-to-catalogue workflow and candidate attrition are summarised in Figs. 3 and 4.
 
@@ -78,28 +78,28 @@ The dog-first assembly strategy grouped sequencing libraries by canonical dog id
 
 Dogs with long-read data but no retained paired short-read support for final hybrid assembly were assembled with Flye in metagenome mode [9]. The Flye runner was:
 
-coassembly_dogfirst_20260505/run_flye_lr_only_dogfirst.sh
+scripts/assembly/run_flye_lr_only_dogfirst.sh
 
-The Flye workflow used the manifest:
+The Flye workflow used a private dog-identity manifest to group source libraries without exposing dog-name crosswalks. In the public release, the corresponding read-to-assembly relationships are reported with coded identifiers in Supplementary Table 4. The runner accepts the manifest path as an input, for example:
 
-metadata/flye_lr_only_dog_manifest_20260513.tsv
+/path/to/private_dog_level_long_read_manifest.tsv
 
 Representative execution:
 
-BASE=/home/mdbio/flye_work/flye_lr_only_dogfirst_20260513 \
+BASE=/path/to/flye_work/flye_lr_only_dogfirst_20260513 \
 
 DOGMAG_ROOT=/path/to/DogMAG \
 
 THREADS=52 \
 
-bash ${DOGMAG_ROOT}/coassembly_dogfirst_20260505/run_flye_lr_only_dogfirst.sh run
+bash ${DOGMAG_ROOT}/scripts/assembly/run_flye_lr_only_dogfirst.sh run
 
 
 Flye v2.9.4-b1799 or v2.9.6-b1802, depending on the retained assembly batch, was run in metagenome mode with --meta and --nano-hq. Mixed-kennel and Serteperti six-barcode long reads were merged for dogs known to be the same individual, including Rozi, Degesz and Ilka. Sugo N.4 and Sugo N.10 were merged because corrected metadata indicated that they represented the same dog. Fancsi was present in the long-read-only assembly plan but did not produce a usable Flye assembly and was therefore excluded before construction of the final BASALT input set.
 
 Flye assembly collection was handled by:
 
-scripts/collect_flye_lr_only_dogfirst_assemblies.sh
+scripts/assembly/collect_flye_lr_only_dogfirst_assemblies.sh
 
 The final collected Flye long-read-only assemblies were placed in:
 
@@ -107,23 +107,23 @@ final_flye_lr_only_dogfirst_assemblies_20260518
 
 Dogs with both short-read and long-read libraries retained for final hybrid assembly were assembled with OPERA-MS [10]. The OPERA-MS runner was:
 
-opera_ms_dogfirst_20260505/run_opera_ms_named_lrs_dogs.sh
+scripts/assembly/run_opera_ms_named_lrs_dogs.sh
 
 The script stages per-dog short-read and long-read inputs, writes an OPERA-MS configuration file and runs OPERA-MS. The installed OPERA-MS source corresponded to Git revision 026f9a5f58ba6dca626f677bb50521fa423901ec (74 commits after tag v0.8.2). The working tree differed from that revision only in the bundled mapper utilities: minimap2 v2.24-r1122 and SAMtools/HTSlib v1.23.1 were used. The final OPERA-MS workflow used NOPOLISHING=YES as the configured run setting.
 
 Representative command pattern:
 
-BASE=/home/kakuk/opera_ms_work/opera_ms_boszi_t12 \
+BASE=/path/to/opera_ms_work/opera_ms_boszi_t12 \
 
 DOGMAG_ROOT=/path/to/DogMAG \
 
-SRS_MANIFEST=${DOGMAG_ROOT}/coassembly_dogfirst_20260505/metadata/dmd_dogfirst_srs_samples.tsv \
+SRS_MANIFEST=/path/to/private_dog_level_short_read_manifest.tsv \
 
-LONG_DIR=${DOGMAG_ROOT}/BASALT_v2 \
+LONG_DIR=/path/to/long_read_inputs \
 
-OPERA_MS=/home/kakuk/programs/OPERA-MS-linuxfs/OPERA-MS.pl \
+OPERA_MS=/path/to/OPERA-MS/OPERA-MS.pl \
 
-OPERA_MINIMAP2=/mnt/c/ubuntu/programs/mm2-fast/minimap2 \
+OPERA_MINIMAP2=/path/to/mm2-fast/minimap2 \
 
 OPERA_SAMTOOLS="$(command -v samtools)" \
 
@@ -131,12 +131,12 @@ NOPOLISHING=YES \
 
 THREADS=12 \
 
-bash ${DOGMAG_ROOT}/opera_ms_dogfirst_20260505/run_opera_ms_named_lrs_dogs.sh Boszi
+bash ${DOGMAG_ROOT}/scripts/assembly/run_opera_ms_named_lrs_dogs.sh DOG_ID
 
 
 The final BASALT input set retained 11 OPERA-MS hybrid assemblies: Boszi, Brios, Cefre, Csuzli, Kek, Loki, Pink, Piros, Sugo, Toti and Zold. These assemblies were collected with:
 
-scripts/collect_hybrid_dogfirst_assemblies.sh
+scripts/assembly/collect_hybrid_dogfirst_assemblies.sh
 
 The collected OPERA-MS hybrid assemblies were placed in:
 
@@ -148,7 +148,7 @@ Alternative hybrid assemblies generated with metaSPAdes or XelNaga were produced
 
 Assembly preparation for the final BASALT run was performed with:
 
-scripts/prepare_dogfirst_final_assemblies_for_basalt.sh
+scripts/assembly/prepare_dogfirst_final_assemblies_for_basalt.sh
 
 The preparation script collected manifest-approved Flye assemblies, linked Flye and OPERA-MS hybrid assemblies into a merged assembly folder and filtered contigs using a minimum length threshold of 1,500 bp.
 
@@ -158,7 +158,7 @@ EXCLUDE_DOG_IDS=DOG_FANCSI \
 
 FORCE=1 \
 
-bash /path/to/DogMAG/scripts/prepare_dogfirst_final_assemblies_for_basalt.sh prepare
+bash /path/to/DogMAG/scripts/assembly/prepare_dogfirst_final_assemblies_for_basalt.sh prepare
 
 
 The filtered assembly folder used for BASALT was:
@@ -192,13 +192,13 @@ QC=checkm2
 
 The final BASALT run used BASALT from:
 
-/home/mdbio/BASALT/BASALT/BASALT.py
+/path/to/BASALT/BASALT.py
 
 The command passed the 41 dog-wise assemblies together with linked short-read and long-read inputs, -q checkm2, --mode continue, --module all, output prefix dogfirst, 28 threads and 300 GB memory.
 
 Representative execution:
 
-python /home/mdbio/BASALT/BASALT/BASALT.py \
+python /path/to/BASALT/BASALT.py \
 
 -a Assembly_mo_list.txt \
 
@@ -361,11 +361,7 @@ scripts/
 
 Supplementary Table 4 links each public dog-wise assembly identifier to public read and sample identifiers, read role, sequencing platform, ENA study accession and checksum fields where available.
 
-The dog-first workflow note is:
-
-documents/dogfirst_coassembly_and_basalt_workflow_20260708.md
-
-A cleaned methods-provenance file accompanies deposition, recording dog-wise assembly generation, BASALT input construction, CheckM2 use, operational quality filtering and downstream catalogue finalisation.
+The manuscript Methods, public workflow scripts and supplementary provenance tables record dog-wise assembly generation, BASALT input construction, CheckM2 use, operational quality filtering and downstream catalogue finalisation.
 
 Raw sequencing reads, derived MAG BioSamples and MAG assembly records have been deposited in the European Nucleotide Archive (ENA) at EMBL-EBI under study accession PRJEB115259. The raw sequencing sample records comprise 84 faecal metagenome samples registered under ERS30645926-ERS30646009. The derived MAG BioSample records comprise 135 DogMAG ANI95 representatives registered under ERS31049448-ERS31049582. Of these 135 representative MAGs, 122 multi-contig MAG assemblies passed Webin-CLI validation and were submitted as ENA genome assembly analysis records. Their ERZ accessions, together with the deposition status of all 135 representatives, are listed in Supplementary Table 9. The remaining 13 representatives are single-contig MAGs whose FASTA sequences and MAG BioSample records are retained in the DogMAG data package; their ENA assembly-analysis submission remains pending guidance on the appropriate route because Webin-CLI requires at least two sequences for CONTIG submissions.
 
@@ -443,7 +439,7 @@ Previously published amplicon, short-read shotgun and source-cohort datasets lin
 
 **Figure 6. DogMAG read recruitment and taxonomic assignment relative to bacterial RefSeq.** Paired primary-read recruitment and final assigned-read fractions for 23 mixed-kennel source-cohort libraries and 23 independent Waltham canine gut ONT metagenomes analysed against bacterial RefSeq and the 135-member DogMAG 95% ANI representative panel using minitax. Points represent individual libraries and grey lines connect results obtained from the same library against the two reference panels. Large diamonds show cohort medians and thick vertical bars show interquartile ranges. Median values are printed below each reference panel. P values are from two-sided exact binomial sign tests of the paired direction of change after excluding exact ties. In the mixed-kennel source cohort, median recruitment increased from 69.90% to 84.32% and median final assignment increased from 69.08% to 84.09%. In the independent Waltham cohort, median recruitment increased from 51.02% to 75.73% and median final assignment increased from 49.84% to 75.48%.
 
-**Figure 7. Viral and prophage candidate overview. Summary of unbinned/free-virus candidates and MAG-associated viral/prophage candidates generated from the final dog-first assembly and BASALT context. geNomad predicted 22,068 viral sequences, of which 3,374 candidate rows passed the final CheckV Complete, High-quality or Medium-****quality (CHM) and contamination <= 10% criteria, representing 3,282 unique source-contig MD5s. Viral class-like assignments were dominated by Caudoviricetes. These records are candidate viral or proviral sequences and have not been dereplicated into vOTUs.**
+**Figure 7. Viral and prophage candidate overview.** Summary of unbinned/free-virus candidates and MAG-associated viral/prophage candidates generated from the final dog-first assembly and BASALT context. geNomad predicted 22,068 viral sequences, of which 3,374 candidate rows passed the final CheckV Complete, High-quality or Medium-quality (CHM) and contamination <= 10% criteria, representing 3,282 unique source-contig MD5s. Viral class-like assignments were dominated by *Caudoviricetes*. These records are candidate viral or proviral sequences and have not been dereplicated into vOTUs.
 
 ## Supplementary Table Legends
 
@@ -479,29 +475,29 @@ The BASALT code version used for DogMAG is available at https://github.com/Balay
 
 Key DogMAG workflow scripts include:
 
-coassembly_dogfirst_20260505/run_flye_lr_only_dogfirst.sh
+scripts/assembly/run_flye_lr_only_dogfirst.sh
 
-opera_ms_dogfirst_20260505/run_opera_ms_named_lrs_dogs.sh
+scripts/assembly/run_opera_ms_named_lrs_dogs.sh
 
-scripts/collect_flye_lr_only_dogfirst_assemblies.sh
+scripts/assembly/collect_flye_lr_only_dogfirst_assemblies.sh
 
-scripts/collect_hybrid_dogfirst_assemblies.sh
+scripts/assembly/collect_hybrid_dogfirst_assemblies.sh
 
-scripts/prepare_dogfirst_final_assemblies_for_basalt.sh
+scripts/assembly/prepare_dogfirst_final_assemblies_for_basalt.sh
 
-scripts/normalize_final_assemblies.py
+scripts/assembly/normalize_final_assemblies.py
 
-scripts/link_reads_to_assemblies.py
+scripts/assembly/link_reads_to_assemblies.py
 
-scripts/assembly_metrics_fast.py
+scripts/assembly/assembly_metrics_fast.py
 
-scripts/summarize_basalt_binset.py
+scripts/catalogue/summarize_basalt_binset.py
 
-scripts/run_catalog_unit_dereplication.py
+scripts/catalogue/run_catalog_unit_dereplication.py
 
-scripts/build_canmag_depletion_panels.sh
+scripts/catalogue/build_canmag_depletion_panels.sh
 
-scripts/package_dogfirst_article_update_files.sh
+scripts/catalogue/package_dogfirst_article_update_files.sh
 
 ## Ethics statement
 

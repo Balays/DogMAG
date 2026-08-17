@@ -408,15 +408,39 @@ Thumbs.db
 *.mmi
 *.dmnd
 """)
+    write_text(target / ".gitattributes", """* text=auto
+*.md text eol=lf
+*.txt text eol=lf
+*.tsv text eol=lf
+*.cff text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.R text eol=lf
+*.svg text eol=lf
+*.docx binary
+*.png binary
+*.pdf binary
+""")
     write_text(target / "CITATION.cff", """cff-version: 1.2.0
 message: "If you use DogMAG, please cite the accompanying Scientific Data article."
-title: "DogMAG: a reusable canine gut metagenome resource"
+title: "Dog-wise canine gut metagenome assemblies with reconstructed bacterial genomes and viral candidates"
 type: dataset
 authors:
   - family-names: Kakuk
-    given-names: Balazs
+    given-names: Balázs
+  - family-names: Yaseen
+    given-names: Natheer Jameel
+  - family-names: Dörmő
+    given-names: Ákos
+  - family-names: Járay
+    given-names: Tamás
+  - family-names: Boldogkői
+    given-names: Zsolt
+  - family-names: Tombácz
+    given-names: Dóra
 repository-code: "https://github.com/Balays/DogMAG"
 license: MIT
+version: "1.0.0-submission"
 """)
     script_rows = ["group\tpublic_filename\tsource_worktree_path"]
     script_rows.extend(f"{group}\t{name}\t{relative}" for group, name, relative in copied_scripts)
