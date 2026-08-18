@@ -56,7 +56,7 @@ As an additional technical validation of reference-panel coverage, 23 independen
 
 DogMAG integrates canine faecal metagenomic sequencing data from related source studies and sequencing campaigns. In the current dog-first design, the primary workflow unit is the canonical dog identity rather than the historical project subset. Source project labels remain in metadata fields because they document sampling provenance, sequencing platform, wet-lab protocol, publication status and ENA accession origin, but they are not used to split the final BASALT workflow into separate project-specific runs.
 
-Sample-linked input reads used for DogMAG assembly and MAG generation are identified by ENA project accessions PRJEB75753 for Dog_M0 input data, PRJEB82125 for DMD input and provenance records, PRJEB85420 for CaniMeta/Serteperti input and provenance records, and PRJEB115259 for DogMAG sample registrations, newly deposited mixed-kennel long-read WGS data and associated DogMAG genome records. Previously generated reads are cited here to document sample provenance and input-read availability; the DogMAG data record reports dog-wise assemblies, BASALT workflow summaries and reselected MAG candidate metadata, viral/prophage candidates and workflow metadata generated from these inputs.
+Sample-linked input reads used for DogMAG assembly and MAG generation are identified by ENA project accessions PRJEB75753 for Dog_M0 input data, PRJEB82125 for DMD input and provenance records, PRJEB85420 for CaniMeta/Serteperti input and provenance records, and PRJEB115259 for DogMAG sample registrations, newly deposited mixed-kennel long-read WGS data and associated DogMAG genome records. Dog_M0 and Serteperti source-data provenance is described in the associated Scientific Data descriptor [24]. Previously generated reads are cited here to document sample provenance and input-read availability; the DogMAG data record reports dog-wise assemblies, BASALT workflow summaries and reselected MAG candidate metadata, viral/prophage candidates and workflow metadata generated from these inputs.
 
 The read-to-assembly provenance data are provided in Supplementary Table 4, which records one row per linked FASTQ using stable public assembly, sample and read identifiers.
 
@@ -70,7 +70,7 @@ For DMD long-read WGS libraries, the ENA template records ONT MinION sequencing.
 
 For Serteperti long-read WGS libraries, the ENA template records ONT MinION sequencing. Extraction method is encoded as HMW or ZymoBIOMICS_96_MagBead, corresponding to Quick-DNA HMW MagBead and ZymoBIOMICS 96 MagBead DNA extraction workflows, respectively. These libraries were prepared as ONT long-read WGS libraries and sequenced on MinION.
 
-Previously published Dog_M0/Toti and method-comparison sequencing datasets are documented through their source publications. In the prior Scientific Data canine faecal microbiome dataset, Dog_M0/Toti was a single adult dog faecal sample collected shortly after defecation, stored initially at -20 degrees C and transferred to -80 degrees C within 24 h. DNA extraction, Illumina short-read sequencing and ONT long-read sequencing details are cited from that source rather than restated as new wet-lab work.
+Previously published Dog_M0/Toti and method-comparison sequencing datasets are documented through their source publications. In the Scientific Data canine faecal microbiome dataset [24], Dog_M0/Toti was a single adult dog faecal sample collected shortly after defecation, stored initially at -20 degrees C and transferred to -80 degrees C within 24 h. DNA extraction, Illumina NovaSeq paired-end sequencing and ONT MinION long-read sequencing details are cited from that source rather than restated as new wet-lab work.
 
 ### Dog-first assembly strategy
 
@@ -253,7 +253,7 @@ The final viral/prophage results are reported as candidate viral or proviral seq
 
 ## Data Records
 
-The DogMAG-derived dataset is deposited in public repositories for direct reuse. The deposited data record is organised around dog-first assemblies, summary-level BASALT provenance and quality metadata, the 3,418 reselected medium-quality-or-better MAG candidates, final externally dereplicated MAG representatives and viral/prophage candidate layers. The complete BASALT workspace, transient intermediate files, and the full set of 30,556 polished or reassembled candidate versions are not part of the deposited resource.
+The DogMAG-derived dataset is organised for direct reuse through ENA and an associated article data package. The data record is organised around dog-first assemblies, summary-level BASALT provenance and quality metadata, the 3,418 reselected medium-quality-or-better MAG candidates, final externally dereplicated MAG representatives and viral/prophage candidate layers. The complete BASALT workspace, transient intermediate files, and the full set of 30,556 polished or reassembled candidate versions are not part of the deposited resource.
 
 Repository structure:
 
@@ -359,7 +359,7 @@ dogfirst_coassembly_and_basalt_workflow_20260708.md
 scripts/
 
 
-Supplementary Table 4 links each public dog-wise assembly identifier to public read and sample identifiers, read role, sequencing platform, ENA study accession and checksum fields where available.
+Supplementary Table 4 links each public dog-wise assembly identifier to public read and sample identifiers, read role, sequencing platform, ENA study accession and checksum fields where available. The two workflow-named Toti/Dog_M0 NovaSeq FASTQs are linked to their corresponding public R1 and R2 ENA runs under PRJEB75753.
 
 The manuscript Methods, public workflow scripts and supplementary provenance tables record dog-wise assembly generation, BASALT input construction, CheckM2 use, operational quality filtering and downstream catalogue finalisation.
 
@@ -385,7 +385,7 @@ The main article reports the 99% ANI representative set as the DogMAG strain-lik
 
 ### Assembly and MAG catalogue consistency
 
-The final assembly layer comprises 41 dog-wise BASALT input assemblies linked to 277 FASTQ records in Supplementary Table 4: 30 Flye long-read-only assemblies and 11 OPERA-MS hybrid long-read/short-read assemblies. The same 41 public assembly identifiers are represented in the BASALT assembly index and final input list, providing a complete link between the deposited read provenance, assembly files and genome-recovery workflow.
+The final assembly layer comprises 41 dog-wise BASALT input assemblies linked to 277 FASTQ records in Supplementary Table 4: 30 Flye long-read-only assemblies and 11 OPERA-MS hybrid long-read/short-read assemblies. The same 41 public assembly identifiers are represented in the BASALT assembly index and final input list, linking all 277 FASTQ records to the assembly files and genome-recovery workflow.
 
 The completed BASALT result contained 11,276 selected bin/version records and a comparison table with 30,556 polished or reassembled candidate versions. Candidate re-selection evaluated all 30,556 candidate rows across 11,276 original bin groups and retained 3,418 medium-quality-or-better groups. The remaining 7,858 groups did not contain an eligible candidate under the DogMAG completeness and contamination thresholds. Among retained groups, 503 candidates met the high-completeness/low-contamination threshold and 2,915 were medium-only.
 
@@ -445,27 +445,27 @@ Previously published amplicon, short-read shotgun and source-cohort datasets lin
 
 **Supplementary Table 1. Dog-first bin/MAG attrition (20260727).** BASALT selected bin/version records, candidate versions, reselected medium-quality-or-better MAG candidates, high-completeness/low-contamination candidates, medium-only candidates and final externally dereplicated representatives, with counts removed at each filtering/dereplication step.
 
-**Supplementary Table 2. MAG candidate and representative metadata (20260727).** Stable MAG identifier, source public assembly identifier, binner, BASALT bin identifier, completeness, contamination, genome size, contig count, N50, GC percentage, quality class, external dereplication cluster, representative status and taxonomy fields.
+**Supplementary Table 2. MAG candidate and representative metadata (20260727).** Stable candidate and original-bin identifiers; selected and source FASTA names and portable paths; source origin and file checksums; binner or reassembly class; CheckM2 completeness and contamination; genome size, N50 and quality score; operational quality class; candidate counts per original bin group; dRep internal-filter, cluster and representative fields at 99% and 95% ANI; and GTDB-Tk classification fields where available. Blank dRep and GTDB-Tk fields identify the 196 candidates not retained by dRep's internal filtering.
 
 **Supplementary Table 3. Wet-lab provenance and DNA concentration metadata (20260727).** Source dataset, public sample identifier, sequencing platform, library name, extraction kit, library preparation workflow, DNA concentration, concentration unit and concentration source file for each sequencing library included in DogMAG.
 
 **Supplementary Table 4. DogMAG assembly-to-read provenance manifest (20260727).** Public-facing table linking final dog-wise BASALT input assemblies to public read/sample identifiers, read role, source manifest, sequencing platform, ENA study accession and checksum fields where available.
 
-**Supplementary Table 5. Viral/prophage candidate metadata (20260727).** Viral candidate identifier, source branch, source assembly, contig identifier, length, geNomad score and taxonomy fields, CheckV quality fields, contamination estimate, MAG/bin context where applicable and deposited FASTA filename.
+**Supplementary Table 5. Viral/prophage candidate metadata (20260727).** Stable viral candidate identifier, source branch, source contig and assembly context, sequence MD5 where available, BASALT bin/MAG context, geNomad length, topology, score and taxonomy fields, and CheckV quality, completeness and contamination fields. Sequence files are organised by the stable candidate and source-contig identifiers in the associated article data package.
 
 **Supplementary Table 6. Viral/prophage candidate quality summary (20260727).** Branch-level geNomad viral prediction counts, CheckV Complete/High/Medium counts after contamination filtering, unique source-contig MD5 counts and dominant broad viral taxonomy. These are not vOTU counts because viral dereplication was not performed.
 
-**Supplementary Table 7. Balanced bacterial RefSeq-versus-DogMAG read-recruitment validation (20260727).** Sample manifest and paired per-library results for 23 mixed-kennel source-cohort and 23 independent Waltham canine gut ONT metagenomes analysed against bacterial RefSeq and the DogMAG 95% ANI representative panel. Reported fields include cohort, library identifier, input primary reads, primary mapped reads, mapped-read fraction, taxonomically assigned reads and assigned-read fraction for BestAln and SpeciesEstimate, together with reference-panel identifiers and minitax run provenance.
+**Supplementary Table 7. Balanced bacterial RefSeq-versus-DogMAG read-recruitment validation (20260727).** Paired per-library summary for 23 mixed-kennel source-cohort and 23 independent Waltham canine gut ONT metagenomes analysed against bacterial RefSeq and the DogMAG 95% ANI representative panel. Fields comprise validation library identifier, cohort, primary-read count, mapped-read fractions for each panel and their percentage-point difference, and final BestAln assigned-read fractions for each panel and their percentage-point difference. Detailed read-accounting and run-provenance files are included separately in the associated article data package.
 
 
 Supplementary Table 8. Final dog-first assembly metrics (20260806). Assembly-level sequence metrics for the 41 retained BASALT input assemblies, comprising 30 Flye long-read-only and 11 OPERA-MS hybrid assemblies. Fields include stable public assembly identifier, assembly class, assembler, linked FASTQ-record count, total assembly length, contig count, longest and shortest retained contigs, mean and median contig lengths, N50, N90, GC and N percentages, and contig-length counts. All sequence metrics were calculated after the 1,500-bp contig-length filter.
 
 
-Supplementary Table 9. ENA deposition status of the 135 DogMAG ANI95 representatives (20260815). MAG alias, MAG-derived sample and BioSample accessions, NCBI and GTDB taxonomic metadata, source assembly and sample links, genome-quality metrics, ERZ assembly-analysis accession where assigned, and assembly-submission status. The table distinguishes 122 submitted multi-contig MAG assemblies from 13 single-contig MAGs pending an ENA assembly-analysis submission route.
+Supplementary Table 9. ENA deposition status of the 135 DogMAG ANI95 representatives (20260815). MAG alias, MAG-derived sample and BioSample accessions, NCBI and GTDB taxonomic metadata, source assembly and sample links, FASTA-derived contig count, genome-quality metrics, ERZ assembly-analysis accession where assigned, and assembly-submission status. The table distinguishes 122 submitted multi-contig MAG assemblies from 13 single-contig MAGs pending an ENA assembly-analysis submission route.
 
 ## Data Availability
 
-Sample-linked input reads used for DogMAG assembly generation, binning, MAG recovery and validation are available from the European Nucleotide Archive under PRJEB75753 for Dog_M0 input data, PRJEB82125 for DMD input and provenance records, PRJEB85420 for CaniMeta/Serteperti input and provenance records, and PRJEB115259 for DogMAG sample registrations, newly deposited mixed-kennel long-read WGS data and associated DogMAG genome records. The PRJEB115259 FASTQ submission table uses public-coded sample, library and file identifiers rather than dog names. Previously published ENA datasets are cited as input-data and sample-provenance records; the DogMAG data record consists of the dog-first assemblies, BASALT workflow summaries and reselected MAG candidate metadata, final MAG representatives, viral/prophage candidates, metadata tables and workflow outputs described above.
+Sample-linked input reads used for DogMAG assembly generation, binning, MAG recovery and validation are available from the European Nucleotide Archive under PRJEB75753 for Dog_M0 input data, PRJEB82125 for DMD input and provenance records, PRJEB85420 for CaniMeta/Serteperti input and provenance records, and PRJEB115259 for DogMAG sample registrations, newly deposited mixed-kennel long-read WGS data and associated DogMAG genome records. The PRJEB115259 FASTQ submission table uses public-coded sample, library and file identifiers rather than dog names. Previously published ENA datasets are cited as input-data and sample-provenance records. The 122 submitted multi-contig representative MAG assemblies are identified by ERZ accessions in Supplementary Table 9; the 13 single-contig representatives remain explicitly marked as pending an ENA assembly-analysis route. Dog-wise assemblies, reselected candidate MAG FASTAs, viral/prophage candidate sequences, metadata tables and detailed workflow outputs are organised in the associated article data package. Its persistent repository identifier and anonymous first-round reviewer link will be added before manuscript submission.
 
 ## Code Availability
 
@@ -566,3 +566,5 @@ We thank the dog owners, kennels and collaborators who provided canine faecal sa
 [22] Camargo, A. P., Roux, S., Schulz, F. et al. Identification of mobile genetic elements with geNomad. Nat Biotechnol 42, 1303-1312 (2024). https://doi.org/10.1038/s41587-023-01953-y
 
 [23] Nayfach, S., Camargo, A. P., Schulz, F. et al. CheckV assesses the quality and completeness of metagenome-assembled viral genomes. Nat Biotechnol 39, 578-585 (2021). https://doi.org/10.1038/s41587-020-00774-7
+
+[24] Kakuk, B., Dormo, A., Taifi, A. et al. Canine Fecal Microbiome Dataset: Ultra-deep Multi-platform Sequencing Across Extraction and Library Protocols. Sci Data (2026). https://doi.org/10.1038/s41597-026-07594-5
