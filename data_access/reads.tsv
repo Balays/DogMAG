@@ -1,0 +1,5 @@
+dataset_role	study_accession	status	browser_url	file_report_url	notes
+Dog_M0_source_reads	PRJEB75753	public_source_study	https://www.ebi.ac.uk/ena/browser/view/PRJEB75753	https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB75753&result=read_run	Previously released source reads used as DogMAG inputs.
+DMD_source_reads	PRJEB82125	public_source_study	https://www.ebi.ac.uk/ena/browser/view/PRJEB82125	https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB82125&result=read_run	Previously released DMD source/provenance records.
+CaniMeta_Serteperti_source_reads	PRJEB85420	public_source_study	https://www.ebi.ac.uk/ena/browser/view/PRJEB85420	https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB85420&result=read_run	Previously released CaniMeta/Serteperti source/provenance records.
+DogMAG_reads	PRJEB115259	held_private	https://www.ebi.ac.uk/ena/browser/view/PRJEB115259	https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB115259&result=read_run	Public API report was empty on 2026-08-20; use accessions/long_read_manifest.tsv for the submitted public-safe manifest.

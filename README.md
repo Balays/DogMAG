@@ -1,13 +1,15 @@
 # DogMAG
 
-DogMAG is a reusable canine faecal metagenome resource comprising long-read
-assemblies, quality-controlled and dereplicated metagenome-assembled genome
-(MAG) catalogues, taxonomic metadata, viral/proviral candidate metadata, and
-reproducible workflow scripts.
+DogMAG is a reusable canine faecal metagenome data resource comprising
+dog-wise assemblies, quality-controlled and dereplicated metagenome-assembled
+genome (MAG) catalogues, taxonomic metadata, viral/proviral candidate metadata,
+and reproducible workflow scripts.
 
-This repository accompanies the DogMAG Scientific Data manuscript. It contains
-the manuscript, figures, supplementary tables, public accession mappings, and
-the scripts required to reproduce the reported processing and summaries.
+This is the public data and workflow repository from which the DogMAG data
+descriptor was prepared. It is not the journal submission repository. Article
+drafts, editorial material, submission checklists, private crosswalks, ENA
+receipts, credentials, and operational submission notes are intentionally not
+distributed here.
 
 ## Key catalogue outputs
 
@@ -18,20 +20,28 @@ the scripts required to reproduce the reported processing and summaries.
 - GTDB-Tk taxonomy for all 792 strain-like representatives.
 - 22,068 viral/proviral candidate rows before final quality filtering.
 
-The sequence files themselves are not stored in Git. Raw reads, assemblies,
-and MAG FASTAs are distributed through the ENA projects and article data record
-described in the manuscript and `accessions/`. All 135 representative MAG
-BioSamples are registered in ENA; 122 multi-contig MAG assemblies have accepted
-assembly accessions, while 13 single-contig records remain pending the separate
-ENA submission route. Supplementary Table 9 is the authoritative status table.
+The sequence files themselves are not stored in Git. Stable access points and
+current deposition status are listed in `data_access/`:
+
+- source and DogMAG reads are linked through their ENA studies;
+- all 41 final dog-wise primary metagenome assemblies have accepted `ERZ`
+  accessions (`ERZ29880033`-`ERZ29880073`) and linked coassembly BioSamples;
+- all 135 representative MAG BioSamples are registered in ENA;
+- 122 multi-contig MAG assemblies have accepted `ERZ` accessions; and
+- 13 single-contig MAG submissions remain pending an ENA-approved route.
+
+The DogMAG ENA study is currently held/private, so its public API reports may
+remain empty until release.
 
 ## Repository map
 
-- `manuscript/`: reconciled Markdown and Word manuscript.
-- `figures/`: publication figures and the source tables used for Figures 5 and 6.
-- `supplementary_tables/`: the nine manuscript supplementary tables.
+- `data_access/`: stable links and deposition status for reads, assemblies, and MAGs.
+- `figures/`: current data-release figures and source tables, retained until a
+  versioned Figshare release is available.
+- `supplementary_tables/`: current data-release metadata tables, retained until
+  a versioned Figshare release is available.
 - `scripts/`: public workflow and reporting scripts grouped by analysis stage.
-- `accessions/`: public ENA sample, read, and MAG accession mappings.
+- `accessions/`: public ENA sample, read, primary-assembly, and MAG accession mappings.
 - `docs/DATA_SHARING_SCOPE.md`: what is and is not distributed here.
 - `checksums/SHA256SUMS.tsv`: SHA-256 inventory of repository files.
 
@@ -43,5 +53,5 @@ miniTax to obtain rapid, detailed taxonomic profiles from canine metagenomes.
 
 ## Citation
 
-Please cite the DogMAG data descriptor once published. Interim citation
-metadata are provided in `CITATION.cff`.
+Please cite the DogMAG data descriptor and the versioned data release once
+published. Interim citation metadata are provided in `CITATION.cff`.

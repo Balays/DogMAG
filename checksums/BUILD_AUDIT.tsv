@@ -1,6 +1,8 @@
-DogMAG public repository audit
-files	73
+DogMAG data repository audit
+files	76
 svg_figures	7
-supplementary_tables	9
-workflow_scripts	38
+supplementary_tables	10
+workflow_scripts	36
+primary_metagenome_assemblies	41
+primary_metagenome_assembly_status	PASS
 status	PASS

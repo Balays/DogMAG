@@ -2,20 +2,30 @@
 
 ## Included in this Git repository
 
-- Final manuscript source and rendered DOCX.
-- Publication figures and figure source tables.
-- Public supplementary metadata tables.
+- Stable data-access links and deposition-status tables.
+- Data-release figures and figure source tables, pending a versioned Figshare release.
+- Public supplementary metadata tables, pending a versioned Figshare release.
 - Public ENA accession mappings.
 - Workflow, catalogue, taxonomy, viral, mapping, and deposition scripts.
 
-## Available through ENA or the article data record
+## Available or planned through ENA
 
-- Raw sequencing reads.
-- The 81 long-read assemblies and linked assembly products.
-- The 11,276-member final BASALT binset.
-- The 3,418 reselected medium-quality-or-better candidate MAG FASTAs.
-- The 792 dRep99 and 135 dRep95 representative MAG FASTAs.
-- Viral/proviral candidate sequence FASTAs and depletion-panel FASTAs.
+- Source reads are linked through PRJEB75753, PRJEB82125, and PRJEB85420.
+- DogMAG reads are registered under PRJEB115259 but remain held/private.
+- All 41 final dog-wise primary metagenome assemblies have accepted analysis
+  accessions ERZ29880033-ERZ29880073 and linked coassembly BioSamples
+  ERS31153171-ERS31153211.
+- Of the 135 dRep95 representative MAGs, 122 multi-contig assemblies have
+  accepted ERZ accessions and 13 single-contig assemblies remain pending.
+
+See `../data_access/` for the authoritative link and status index.
+
+## Planned versioned data release
+
+Figures, supplementary metadata tables, viral/proviral candidate sequences,
+depletion panels, and any sequence products not deposited in ENA may be
+released through Figshare. Until a DOI is assigned and verified, repository
+copies of the figures and tables are retained and no placeholder DOI is used.
 
 ## Deliberately excluded from Git
 
@@ -24,6 +34,8 @@
 - Bowtie2, minimap2, DIAMOND, GTDB, CheckM2, and other databases or indexes.
 - Temporary work directories, logs, checkpoints, and restart snapshots.
 - Private dog-name crosswalks, internal barcode mappings, credentials, and test receipts.
+- Manuscript drafts, editorial files, journal submission forms, and operational
+  ENA action notes.
 
 Supplementary Table 2 preserves candidate-level provenance but uses portable,
 repository-relative sequence locations. Supplementary Table 5 likewise uses

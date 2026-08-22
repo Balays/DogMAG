@@ -21,7 +21,6 @@ basalt	rebuild_bins_folder.py	scripts/rebuild_bins_folder.py
 catalogue	summarize_basalt_binset.py	scripts/summarize_basalt_binset.py
 catalogue	run_catalog_unit_dereplication.py	scripts/run_catalog_unit_dereplication.py
 catalogue	build_canmag_depletion_panels.sh	scripts/build_canmag_depletion_panels.sh
-catalogue	package_dogfirst_article_update_files.sh	scripts/package_dogfirst_article_update_files.sh
 taxonomy	run_mag_taxonomy_workflow.sh	scripts/run_mag_taxonomy_workflow.sh
 taxonomy	prepare_mag_taxonomy_inputs.py	scripts/prepare_mag_taxonomy_inputs.py
 taxonomy	merge_gtdbtk_taxonomy.py	scripts/merge_gtdbtk_taxonomy.py
@@ -36,4 +35,3 @@ mapping	build_genome_16s_minitax_db.py	scripts/build_genome_16s_minitax_db.py
 mapping	plot_final_balanced46_svg.py	waltham_mapping_pilot/minitax_DogMAG/scripts/plot_final_balanced46_svg.py
 ena	prepare_ena_mag_submission.py	scripts/prepare_ena_mag_submission.py
 ena	build_ena_fastq1_manifest_prjeb115259.py	scripts/build_ena_fastq1_manifest_prjeb115259.py
-release	build_dogmag_public_repo.py	scripts/build_dogmag_public_repo.py
