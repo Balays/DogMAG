@@ -19,6 +19,7 @@ distributed here.
 - 792 representatives at 99% ANI and 135 representatives at 95% ANI.
 - GTDB-Tk taxonomy for all 792 strain-like representatives.
 - 22,068 viral/proviral candidate rows before final quality filtering.
+- 3,374 CheckV-filtered Complete, High-quality, or Medium-quality viral/proviral candidate rows with contamination <=10%.
 
 The sequence files themselves are not stored in Git. Stable access points and
 current deposition status are listed in `data_access/`:
