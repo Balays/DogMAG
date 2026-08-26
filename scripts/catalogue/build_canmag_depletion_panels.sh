@@ -133,9 +133,6 @@ find_minimap2_bin() {
   for candidate in \
     mm2-fast \
     minimap2-fast \
-    /mnt/c/ubuntu/programs/mm2-fast/minimap2 \
-    /mnt/c/programs/mm2-fast/minimap2 \
-    /mnt/d/programs/mm2-fast/minimap2 \
     minimap2
   do
     if command -v "$candidate" >/dev/null 2>&1; then

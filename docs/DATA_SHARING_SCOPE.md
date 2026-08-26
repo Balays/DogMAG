@@ -11,12 +11,14 @@
 ## Available or planned through ENA
 
 - Source reads are linked through PRJEB75753, PRJEB82125, and PRJEB85420.
-- DogMAG reads are registered under PRJEB115259 but remain held/private.
+- PRJEB115259, its source-sample records, and the 41 primary metagenome
+  assemblies are public. Newly submitted DogMAG read experiments remain held.
 - All 41 final dog-wise primary metagenome assemblies have accepted analysis
   accessions ERZ29880033-ERZ29880073 and linked coassembly BioSamples
   ERS31153171-ERS31153211.
-- Of the 135 dRep95 representative MAGs, 122 multi-contig assemblies have
-  accepted ERZ accessions and 13 single-contig assemblies remain pending.
+- The 135 dRep95 representative MAG BioSamples and 122 accepted multi-contig
+  assembly records remain held; 13 single-contig assemblies remain pending an
+  ENA-approved route.
 
 See `../data_access/` for the authoritative link and status index.
 

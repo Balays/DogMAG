@@ -2,12 +2,12 @@
 set -euo pipefail
 
 THREADS="${THREADS:-58}"
-BASE="${BASE:-/home/kakuk/CanMAG/opera_ms_dogfirst_20260505}"
-CANMAG="${CANMAG:-/home/kakuk/CanMAG}"
+CANMAG="${CANMAG:-$(pwd)}"
+BASE="${BASE:-$CANMAG/opera_ms_dogfirst}"
 SRS_MANIFEST="${SRS_MANIFEST:-$CANMAG/coassembly_dogfirst_20260505/metadata/dmd_dogfirst_srs_samples.tsv}"
 LONG_DIR="${LONG_DIR:-$CANMAG/BASALT_v2}"
-OPERA_MS="${OPERA_MS:-/mnt/c/GitHub/OPERA-MS/OPERA-MS.pl}"
-OPERA_MINIMAP2="${OPERA_MINIMAP2:-/mnt/c/ubuntu/programs/mm2-fast/minimap2}"
+OPERA_MS="${OPERA_MS:-$(command -v OPERA-MS.pl || true)}"
+OPERA_MINIMAP2="${OPERA_MINIMAP2:-$(command -v mm2-fast || command -v minimap2 || true)}"
 OPERA_SAMTOOLS="${OPERA_SAMTOOLS:-$(command -v samtools || true)}"
 LONG_READ_MAPPER="${LONG_READ_MAPPER:-minimap2}"
 REF_CLUSTERING="${REF_CLUSTERING:-NO}"
@@ -127,25 +127,25 @@ ensure_opera_samtools_wrapper
 
 dog_long_reads() {
   case "$1" in
-    Boszi)
+    DMD_B_PF1)
       printf '%s\n' \
-        "$LONG_DIR/DMD_Boszi_MN_bc08_pass.fastq.gz" \
-        "$LONG_DIR/DMD_Boszi_Zymo_HMW_bc04_pass.fastq.gz"
+        "$LONG_DIR/DMD_B_PF1_210504_MN.fastq.gz" \
+        "$LONG_DIR/DMD_B_PF1_210504_HMW.fastq.gz"
       ;;
-    Brios)
+    DMD_B_PM2)
       printf '%s\n' \
-        "$LONG_DIR/DMD_Brios_MN_bc07_pass.fastq.gz" \
-        "$LONG_DIR/DMD_Brios_Zymo_HMW_bc03_pass.fastq.gz"
+        "$LONG_DIR/DMD_B_PM2_210505_MN.fastq.gz" \
+        "$LONG_DIR/DMD_B_PM2_210505_HMW.fastq.gz"
       ;;
-    Loki)
+    DMD_0_AM1)
       printf '%s\n' \
-        "$LONG_DIR/DMD_Loki_MN_bc05_pass.fastq.gz" \
-        "$LONG_DIR/DMD_Loki_Zymo_HMW_bc01_pass.fastq.gz"
+        "$LONG_DIR/DMD_0_AM1_210513_MN.fastq.gz" \
+        "$LONG_DIR/DMD_0_AM1_210513_HMW.fastq.gz"
       ;;
-    Sugo)
+    DMD_0_AF1)
       printf '%s\n' \
-        "$LONG_DIR/DMD_Sugo_MN_bc06_pass.fastq.gz" \
-        "$LONG_DIR/DMD_Sugo_Zymo_HMW_bc02_pass.fastq.gz"
+        "$LONG_DIR/DMD_0_AF1_210508_MN.fastq.gz" \
+        "$LONG_DIR/DMD_0_AF1_210508_HMW.fastq.gz"
       ;;
     *)
       echo "[ERROR] No explicit LRS mapping for dog: $1" >&2
@@ -170,7 +170,6 @@ collect_srs_paths() {
   local col="$2"
   awk -F '\t' -v dog="$dog" -v col="$col" 'NR>1 && $1 == dog {print $col}' "$SRS_MANIFEST" |
     sed "s#^/path/to/DogMAG_workdir#$CANMAG#" |
-    sed "s#^/home/kakuk/CanMAG#$CANMAG#" |
     sed 's#_trimmed_host_removed_R1\.fq\.gz#_R1_filt.fq.gz#' |
     sed 's#_trimmed_host_removed_R2\.fq\.gz#_R2_filt.fq.gz#'
 }
@@ -244,7 +243,7 @@ if [[ "${1:-all}" == "check" ]]; then
   echo "[INFO] SRS manifest: $SRS_MANIFEST"
   echo "[INFO] LONG_DIR: $LONG_DIR"
   echo "[INFO] DECOMPRESS_INPUTS: $DECOMPRESS_INPUTS"
-  for dog in Boszi Brios Loki Sugo; do
+  for dog in DMD_B_PF1 DMD_B_PM2 DMD_0_AM1 DMD_0_AF1; do
     echo "[CHECK] $dog"
     mapfile -t r1s < <(collect_srs_paths "$dog" 9)
     mapfile -t r2s < <(collect_srs_paths "$dog" 10)
@@ -257,16 +256,16 @@ if [[ "${1:-all}" == "check" ]]; then
 fi
 
 case "${1:-all}" in
-  Boszi|Brios|Loki|Sugo)
+  DMD_B_PF1|DMD_B_PM2|DMD_0_AM1|DMD_0_AF1)
     run_dog "$1"
     ;;
   pilot|all)
-    for dog in Boszi Brios Loki Sugo; do
+    for dog in DMD_B_PF1 DMD_B_PM2 DMD_0_AM1 DMD_0_AF1; do
       run_dog "$dog"
     done
     ;;
   *)
-    echo "Usage: bash run_opera_ms_named_lrs_dogs.sh [check|pilot|all|Boszi|Brios|Loki|Sugo]" >&2
+    echo "Usage: bash run_opera_ms_named_lrs_dogs.sh [check|pilot|all|DMD_B_PF1|DMD_B_PM2|DMD_0_AM1|DMD_0_AF1]" >&2
     exit 1
     ;;
 esac

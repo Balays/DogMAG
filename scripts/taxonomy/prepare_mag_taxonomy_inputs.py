@@ -63,7 +63,7 @@ def parse_args() -> argparse.Namespace:
         metavar="FROM=TO",
         help=(
             "Rewrite output paths in batch/metadata files. Useful when preparing on "
-            "Windows for WSL, e.g. D:\\data\\CanMAG=/mnt/d/data/CanMAG."
+            "another execution environment, e.g. /data/DogMAG=/work/DogMAG."
         ),
     )
     return parser.parse_args()

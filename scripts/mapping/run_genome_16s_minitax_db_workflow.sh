@@ -17,8 +17,7 @@ Usage:
   bash scripts/run_genome_16s_minitax_db_workflow.sh --genome-dir PATH --out-dir PATH --db-name NAME [options]
 
 Options:
-  --project-dir PATH       CanMAG project directory
-                          [default: /path/to/DogMAG_workdir if present, otherwise /mnt/d/data/CanMAG]
+  --project-dir PATH       DogMAG project/work directory [default: current directory]
   --genome-dir PATH        Directory with one genome FASTA per MAG/genome [required unless GENOME_DIR is set]
   --taxonomy PATH          Optional taxonomy TSV, preferably GTDB-Tk summary style
   --out-dir PATH           Output root [default: PROJECT_DIR/minitax_16s_db]
@@ -47,11 +46,7 @@ Example:
 USAGE
 }
 
-if [[ -d /path/to/DogMAG_workdir ]]; then
-  DEFAULT_PROJECT_DIR=/path/to/DogMAG_workdir
-else
-  DEFAULT_PROJECT_DIR=/mnt/d/data/CanMAG
-fi
+DEFAULT_PROJECT_DIR="$(pwd)"
 
 PROJECT_DIR=${PROJECT_DIR:-$DEFAULT_PROJECT_DIR}
 GENOME_DIR=${GENOME_DIR:-}

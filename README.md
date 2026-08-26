@@ -30,8 +30,11 @@ current deposition status are listed in `data_access/`:
 - 122 multi-contig MAG assemblies have accepted `ERZ` accessions; and
 - 13 single-contig MAG submissions remain pending an ENA-approved route.
 
-The DogMAG ENA study is currently held/private, so its public API reports may
-remain empty until release.
+The DogMAG ENA study, source-sample records, and 41 primary metagenome
+assemblies are public. Newly submitted DogMAG read experiments and MAG-derived
+sample/assembly records remain held at the time of this repository release;
+their accession mappings are retained here so the links become resolvable when
+ENA releases those record layers.
 
 ## Repository map
 

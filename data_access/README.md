@@ -9,15 +9,16 @@ files.
 
 | Data layer | Expected records | ENA status | Index |
 |---|---:|---|---|
-| Source and DogMAG reads | Project-level | Linked by ENA study; PRJEB115259 currently held/private | `reads.tsv` |
-| Final dog-wise primary metagenome assemblies | 41 | Accepted as ERZ29880033-ERZ29880073 | `assemblies.tsv` and `../accessions/primary_metagenome_assembly_accessions.tsv` |
-| 95% ANI representative MAG BioSamples | 135 | Registered | `mags.tsv` and `../accessions/mag_sample_accessions.tsv` |
-| Multi-contig representative MAG assemblies | 122 | Accepted with ERZ accessions | `mags.tsv` and `../accessions/mag_assembly_accessions_pass122.tsv` |
+| Source and DogMAG reads | Project-level | Source records public; newly submitted DogMAG read experiments held | `reads.tsv` |
+| Final dog-wise primary metagenome assemblies | 41 | Public as ERZ29880033-ERZ29880073 | `assemblies.tsv` and `../accessions/primary_metagenome_assembly_accessions.tsv` |
+| 95% ANI representative MAG BioSamples | 135 | Registered and held | `mags.tsv` and `../accessions/mag_sample_accessions.tsv` |
+| Multi-contig representative MAG assemblies | 122 | Accepted with ERZ accessions and held | `mags.tsv` and `../accessions/mag_assembly_accessions_pass122.tsv` |
 | Single-contig representative MAG assemblies | 13 | Pending ENA-approved submission route | `mags.tsv` |
 
-The PRJEB115259 study is held/private. Public ENA API reports may therefore
-remain empty until release; this does not invalidate the accessions recorded
-in the production submission exports.
+PRJEB115259 and the 41 primary assembly records are public. Public ENA reports
+for the newly submitted read experiments and MAG layers may remain empty until
+those held records are released; this does not invalidate the accessions
+recorded in the production submission exports.
 
 ## Link policy
 
