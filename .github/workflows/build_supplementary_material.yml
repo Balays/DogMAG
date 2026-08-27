@@ -1,0 +1,52 @@
+name: Build supplementary material workbook
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'supplementary_tables/**'
+      - 'scripts/make_supplementary_material_excel.py'
+      - '.github/workflows/build_supplementary_material.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build-workbook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install openpyxl
+
+      - name: Build workbook
+        run: |
+          python scripts/make_supplementary_material_excel.py \
+            --input-dir supplementary_tables \
+            --output supplementary_material.xlsx \
+            --checksum-file checksums/SHA256SUMS.tsv
+
+      - name: Upload workbook artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: supplementary_material
+          path: supplementary_material.xlsx
+
+      - name: Commit workbook if changed
+        run: |
+          if git diff --quiet -- supplementary_material.xlsx checksums/SHA256SUMS.tsv; then
+            echo "No workbook changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add supplementary_material.xlsx checksums/SHA256SUMS.tsv
+          git commit -m "Build supplementary material workbook"
+          git push
