@@ -24,18 +24,22 @@ distributed here.
 The sequence files themselves are not stored in Git. Stable access points and
 current deposition status are listed in `data_access/`:
 
-- source and DogMAG reads are linked through their ENA studies;
-- all 41 final dog-wise primary metagenome assemblies have accepted `ERZ`
-  accessions (`ERZ29880033`-`ERZ29880073`) and linked coassembly BioSamples;
-- all 135 representative MAG BioSamples are registered in ENA;
-- 122 multi-contig MAG assemblies have accepted `ERZ` accessions; and
-- 13 single-contig MAG submissions remain pending an ENA-approved route.
+- all 84 DogMAG raw-read experiments and runs are public in PRJEB115259;
+- all 41 final dog-wise primary metagenome assemblies are public with accepted
+  `ERZ` accessions (`ERZ29880033`-`ERZ29880073`) and linked coassembly
+  BioSamples;
+- all 135 representative MAG BioSamples are public under
+  `SAMEA123300624`-`SAMEA123300758`;
+- all 122 submitted multi-contig MAG assemblies are public with accepted
+  `ERZ` accessions; and
+- the 13 single-contig MAG BioSamples are public, while their FASTA sequences
+  remain available through the associated article data package because ENA's
+  CONTIG route did not accept single-sequence assemblies.
 
-The DogMAG ENA study, source-sample records, and 41 primary metagenome
-assemblies are public. Newly submitted DogMAG read experiments and MAG-derived
-sample/assembly records remain held at the time of this repository release;
-their accession mappings are retained here so the links become resolvable when
-ENA releases those record layers.
+The DogMAG study and all submitted read, primary-assembly, MAG BioSample, and
+multi-contig MAG analysis layers were publicly verified on 2026-09-01.
+Some MAG `ERS` aliases may still return 404 in ENA Browser even though the
+corresponding `SAMEA` BioSample records are public.
 
 ## Repository map
 
