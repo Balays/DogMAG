@@ -8,19 +8,23 @@
 - Public ENA accession mappings.
 - Workflow, catalogue, taxonomy, viral, mapping, and deposition scripts.
 
-## Available or planned through ENA
+## Available through ENA
 
 - Source reads are linked through PRJEB75753, PRJEB82125, and PRJEB85420.
-- PRJEB115259, its source-sample records, and the 41 primary metagenome
-  assemblies are public. Newly submitted DogMAG read experiments remain held.
-- All 41 final dog-wise primary metagenome assemblies have accepted analysis
-  accessions ERZ29880033-ERZ29880073 and linked coassembly BioSamples
-  ERS31153171-ERS31153211.
-- The 135 dRep95 representative MAG BioSamples and 122 accepted multi-contig
-  assembly records remain held; 13 single-contig assemblies remain pending an
-  ENA-approved route.
+- PRJEB115259 and all 84 DogMAG raw-read experiments and runs are public.
+- All 41 final dog-wise primary metagenome assemblies are public under
+  ERZ29880033-ERZ29880073 with linked coassembly BioSamples.
+- All 135 dRep95 representative MAG BioSamples are public under
+  SAMEA123300624-SAMEA123300758.
+- All 122 submitted multi-contig MAG assembly analyses are public with ERZ
+  accessions.
+- The 13 single-contig MAG BioSamples are public; their FASTAs remain in the
+  associated article data package because ENA's CONTIG route did not accept
+  single-sequence assemblies.
 
-See `../data_access/` for the authoritative link and status index.
+These layers were publicly verified on 2026-09-01. Some MAG ERS aliases may
+still return 404 even though the corresponding SAMEA BioSample records are
+public. See `../data_access/` for the authoritative link and status index.
 
 ## Planned versioned data release
 
